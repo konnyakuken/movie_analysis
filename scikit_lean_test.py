@@ -3,28 +3,43 @@ import pandas as pd
 import numpy as np
 from sklearn import datasets
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
 # データフレームの作成
 movie = pd.read_csv('movie.csv')
 #print(movie)
 
-print(movie.iloc[:, 0:100])
-
-
 #インスタンス
-#linear_regression = LinearRegression()
+linear_regression = LinearRegression()
 
 #説明変数を縦(1)の列と指定し,削除
-X = movie.drop("budget", 1)
+X = movie[["budget"]].values
 
-#Yに目的変数を入れます！
-Y = movie.drop("revenue", 1)
+#Y 目的変数
+Y = movie[["revenue"]].values
 print(X)
 print("ashdjhgzfhdjhshtstr")
 print(Y)
 
-#こんな書き方でも大丈夫！
-#Y = boston_df["PRICE"]
+#学習
+linear_regression.fit(X, Y)  
+
+print('coefficient = ', linear_regression.coef_[0]) # 説明変数の係数を出力
+print('intercept = ', linear_regression.intercept_) # 切片を出力
+
+coefficient =  9.10210898118
+intercept =  -34.6706207764
+
+
+plt.scatter(X, Y, color = 'blue')         # 説明変数と目的変数のデータ点の散布図をプロット
+plt.plot(X, linear_regression.predict(X), color = 'red') # 回帰直線をプロット
+
+plt.title('Regression Line')               # 図のタイトル
+plt.xlabel('Average number of rooms [budget]') # x軸のラベル
+plt.ylabel('Prices in $1000\'s [revenue]')    # y軸のラベル
+plt.grid()                                 # グリッド線を表示
+
+plt.show()                                 # 図の表示
 """
 # ライブラリーのインポート
 from sklearn.preprocessing import StandardScaler
