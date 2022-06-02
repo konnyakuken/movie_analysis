@@ -1,6 +1,8 @@
 import tmdbsimple as tmdb
 import csv
 
+#tmdbsimpleライブラリを利用した簡単なテスト
+
 #APIkeyを非表示にする
 # coding: UTF-8
 import os

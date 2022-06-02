@@ -3,6 +3,8 @@ import json
 import csv
 import pandas as pd
 
+#TMDB_APIから必要な情報を取得してきて、CSVファイルを作成するコード
+
 #APIkeyを非表示にする
 # coding: UTF-8
 import os
@@ -129,7 +131,7 @@ api = TMDB(token) # tokenは発行された文字列を代入
 count=0
 body=[]
 num = 550
-while num < 700:
+while count<300:
     try:
         movie = api.get_movie(num)
         if movie["budget"]!=0 and movie["revenue"]!=0:
