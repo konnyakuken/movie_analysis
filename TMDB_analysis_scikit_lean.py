@@ -62,8 +62,8 @@ print('coefficient = ', linear_regression.coef_[0])
 # 切片を出力
 print('intercept = ', linear_regression.intercept_) 
 
-coefficient =  9.10210898118
-intercept =  -34.6706207764
+#coefficient =  9.10210898118
+#intercept =  -34.6706207764
 
 
 plt.scatter(pred_lr, y_test, color = 'blue')         # 説明変数と目的変数のデータ点の散布図をプロット
