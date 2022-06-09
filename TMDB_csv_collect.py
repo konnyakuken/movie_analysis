@@ -131,7 +131,7 @@ api = TMDB(token) # tokenは発行された文字列を代入
 count=0
 body=[]
 num = 550
-while count<300:
+while count<500:
     try:
         movie = api.get_movie(num)
         if movie["budget"]!=0 and movie["revenue"]!=0:

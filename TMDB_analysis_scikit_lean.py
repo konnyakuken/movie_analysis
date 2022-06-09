@@ -86,4 +86,11 @@ plt.xlabel('budget') # x軸のラベル
 plt.ylabel('revenue')    # y軸のラベル
 plt.grid()                                 # グリッド線を表示
 
-plt.show()   
+plt.show()
+
+#推論 (inference) 
+x_check=x_test[:3]
+print(linear_regression.predict(x_check))
+print("y_test=",y_test[:3])
+print("x_test=",x_test[:3])
+
